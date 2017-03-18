@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PDBModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=E:\MyGitHub\PDDB\ProjectDocumentDataBase\bin\Debug\PDB.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AppParameter">
+          <Key>
+            <PropertyRef Name="paramname " />
+          </Key>
+          <Property Name="paramname " Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="paramvalue" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="msgflag" Type="int" Nullable="false" />
+          <Property Name="msgdatetime" Type="datetime" Nullable="false" />
+          <Property Name="docname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="doctypeshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="projname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="projshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="docnumber" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="filepath" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="modifydatetime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="doctype" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="doctypeshort" Type="nvarchar" MaxLength="2147483647" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="projectname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="projshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="projtype" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="projtypeshot" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PDBModelStoreContainer">
+          <EntitySet Name="AppParameter" EntityType="Self.AppParameter" store:Type="Tables" />
+          <EntitySet Name="Document" EntityType="Self.Document" store:Type="Tables" />
+          <EntitySet Name="DocumentType" EntityType="Self.DocumentType" store:Type="Tables" />
+          <EntitySet Name="Project" EntityType="Self.Project" store:Type="Tables" />
+          <EntitySet Name="ProjectType" EntityType="Self.ProjectType" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AppParameter">
+          <Key>
+            <PropertyRef Name="paramname_" />
+          </Key>
+          <Property Name="paramname_" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="paramvalue" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="msgflag" Type="Int32" Nullable="false" />
+          <Property Name="msgdatetime" Type="DateTime" Nullable="false" />
+          <Property Name="docname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="doctypeshort" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="projname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="projshort" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="docnumber" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="filepath" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="modifydatetime" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="doctype" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="doctypeshort" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="projectname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="projshort" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="projtype" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="projtypeshot" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AppParameter" EntityType="Self.AppParameter" />
+          <EntitySet Name="Document" EntityType="Self.Document" />
+          <EntitySet Name="DocumentType" EntityType="Self.DocumentType" />
+          <EntitySet Name="Project" EntityType="Self.Project" />
+          <EntitySet Name="ProjectType" EntityType="Self.ProjectType" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PDBModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="AppParameter">
+            <EntityTypeMapping TypeName="PDBModel.AppParameter">
+              <MappingFragment StoreEntitySet="AppParameter">
+                <ScalarProperty Name="paramname_" ColumnName="paramname " />
+                <ScalarProperty Name="paramvalue" ColumnName="paramvalue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Document">
+            <EntityTypeMapping TypeName="PDBModel.Document">
+              <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="msgflag" ColumnName="msgflag" />
+                <ScalarProperty Name="msgdatetime" ColumnName="msgdatetime" />
+                <ScalarProperty Name="docname" ColumnName="docname" />
+                <ScalarProperty Name="doctypeshort" ColumnName="doctypeshort" />
+                <ScalarProperty Name="projname" ColumnName="projname" />
+                <ScalarProperty Name="projshort" ColumnName="projshort" />
+                <ScalarProperty Name="docnumber" ColumnName="docnumber" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="modifydatetime" ColumnName="modifydatetime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentType">
+            <EntityTypeMapping TypeName="PDBModel.DocumentType">
+              <MappingFragment StoreEntitySet="DocumentType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="doctype" ColumnName="doctype" />
+                <ScalarProperty Name="doctypeshort" ColumnName="doctypeshort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project">
+            <EntityTypeMapping TypeName="PDBModel.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="projectname" ColumnName="projectname" />
+                <ScalarProperty Name="projshort" ColumnName="projshort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectType">
+            <EntityTypeMapping TypeName="PDBModel.ProjectType">
+              <MappingFragment StoreEntitySet="ProjectType">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="projtype" ColumnName="projtype" />
+                <ScalarProperty Name="projtypeshot" ColumnName="projtypeshot" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

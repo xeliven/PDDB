@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PDBModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=E:\MyGitHub\PDDB\ProjectDocumentDataBase\bin\Debug\PDB.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AppParameter">
+    <Key>
+      <PropertyRef Name="paramname " />
+    </Key>
+    <Property Name="paramname " Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="paramvalue" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="msgflag" Type="int" Nullable="false" />
+    <Property Name="msgdatetime" Type="datetime" Nullable="false" />
+    <Property Name="docname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="doctypeshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="projname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="projshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="docnumber" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="modifydatetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="doctype" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="doctypeshort" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projectname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="projshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="projtype" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="projtypeshot" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PDBModelStoreContainer">
+    <EntitySet Name="AppParameter" EntityType="Self.AppParameter" store:Type="Tables" />
+    <EntitySet Name="Document" EntityType="Self.Document" store:Type="Tables" />
+    <EntitySet Name="DocumentType" EntityType="Self.DocumentType" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" store:Type="Tables" />
+    <EntitySet Name="ProjectType" EntityType="Self.ProjectType" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

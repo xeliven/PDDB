@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PDBModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="AppParameter">
+      <EntityTypeMapping TypeName="PDBModel.AppParameter">
+        <MappingFragment StoreEntitySet="AppParameter">
+          <ScalarProperty Name="paramname_" ColumnName="paramname " />
+          <ScalarProperty Name="paramvalue" ColumnName="paramvalue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Document">
+      <EntityTypeMapping TypeName="PDBModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="msgflag" ColumnName="msgflag" />
+          <ScalarProperty Name="msgdatetime" ColumnName="msgdatetime" />
+          <ScalarProperty Name="docname" ColumnName="docname" />
+          <ScalarProperty Name="doctypeshort" ColumnName="doctypeshort" />
+          <ScalarProperty Name="projname" ColumnName="projname" />
+          <ScalarProperty Name="projshort" ColumnName="projshort" />
+          <ScalarProperty Name="docnumber" ColumnName="docnumber" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="modifydatetime" ColumnName="modifydatetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentType">
+      <EntityTypeMapping TypeName="PDBModel.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="doctype" ColumnName="doctype" />
+          <ScalarProperty Name="doctypeshort" ColumnName="doctypeshort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project">
+      <EntityTypeMapping TypeName="PDBModel.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="projectname" ColumnName="projectname" />
+          <ScalarProperty Name="projshort" ColumnName="projshort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectType">
+      <EntityTypeMapping TypeName="PDBModel.ProjectType">
+        <MappingFragment StoreEntitySet="ProjectType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="projtype" ColumnName="projtype" />
+          <ScalarProperty Name="projtypeshot" ColumnName="projtypeshot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

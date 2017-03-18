@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AppParameter">
+    <Key>
+      <PropertyRef Name="paramname_" />
+    </Key>
+    <Property Name="paramname_" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="paramvalue" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="msgflag" Type="Int32" Nullable="false" />
+    <Property Name="msgdatetime" Type="DateTime" Nullable="false" />
+    <Property Name="docname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="doctypeshort" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="projname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="projshort" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="docnumber" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="filepath" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="modifydatetime" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="doctype" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="doctypeshort" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="projectname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="projshort" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProjectType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="projtype" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="projtypeshot" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AppParameter" EntityType="Self.AppParameter" />
+    <EntitySet Name="Document" EntityType="Self.Document" />
+    <EntitySet Name="DocumentType" EntityType="Self.DocumentType" />
+    <EntitySet Name="Project" EntityType="Self.Project" />
+    <EntitySet Name="ProjectType" EntityType="Self.ProjectType" />
+  </EntityContainer>
+</Schema>
