@@ -76,6 +76,7 @@
     <Compile Include="Document.cs">
       <DependentUpon>PDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DocumentInfo.cs" />
     <Compile Include="DocumentType.cs">
       <DependentUpon>PDBModel.tt</DependentUpon>
     </Compile>

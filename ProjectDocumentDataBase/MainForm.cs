@@ -75,7 +75,7 @@ namespace ProjectDocumentDataBase
                     listbox.Dock = DockStyle.Fill;
                     listbox.AutoScroll = true;
                     listbox.ItemDoubleClick += Listbox_ItemDoubleClick;
-                    listbox.ItemCheck += Listbox_ItemCheck;
+             
                     var pjtlistquery = from p in context.Project where p.projettype == q.projtype select p;
                     listbox.DisplayMember = "projectname";
                     listbox.DataSource = pjtlistquery.ToList();
@@ -94,10 +94,8 @@ namespace ProjectDocumentDataBase
             }
         }
 
-        private void Listbox_ItemCheck(object sender, ListBoxAdvItemCheckEventArgs e)
-        {//选择文件
 
-        }
+        
 
         private Dictionary<string, ListBoxAdv> _DocListAdvDic = new Dictionary<string, ListBoxAdv>();
         private void Listbox_ItemDoubleClick(object sender, MouseEventArgs e)
@@ -118,6 +116,7 @@ namespace ProjectDocumentDataBase
                     listbox.Dock = DockStyle.Fill;
                     listbox.AutoScroll = true;
                     listbox.ItemDoubleClick += DocList_ItemDounleChick;
+                    listbox.ItemClick += Listbox_ItemCheck;
                     var pjtlistquery = from p in context.Document where p.doctypename == q.type select p;
                     listbox.DisplayMember = "docname";
                     listbox.DataSource = pjtlistquery.ToList();
@@ -136,12 +135,42 @@ namespace ProjectDocumentDataBase
             }
             sideNav2.Refresh();
         }
+        private void Listbox_ItemCheck(object sender, EventArgs e)
+        {//选择文件
+            BaseItem bc = sender as BaseItem;
+            ItemBindingData data = bc.Tag as ItemBindingData;
+            if (data == null) { return; }
+            Document doc = data.DataItem as Document;
+            if (!System.IO.File.Exists(doc.filepath)) { return; }
+            System.IO.FileInfo fi = new System.IO.FileInfo(doc.filepath);
 
+            DocumentInfo info = new DocumentInfo()
+            {
+                文件名 = doc.docname,
+                文件地址 = doc.filepath,
+                文档大小 =PublicStatic.GetDisplaySize( fi.Length),
+                文档建立时间 = doc.modifydatetime==null?DateTime.MinValue:(DateTime)doc.modifydatetime,
+                文档归档时间 = doc.msgdatetime,
+                文档最后修改时间 = fi.LastWriteTime,
+                文档最后访问时间 = fi.LastAccessTime,
+                文档类别 = doc.doctypename,
+                文档类别缩写 = doc.doctypeshort,
+                档案编号 = doc.docnumber,
+                项目名称 = doc.projname,
+                项目名称缩写 = doc.projshort,
+                项目类别 = doc.projtypename,
+                项目类别缩写 = doc.projtypeshot,
+
+            };
+            propertyGrid1.SelectedObject = info;
+
+        }
         private void DocList_ItemDounleChick(object sender, MouseEventArgs e)
         {//打开文档
             BaseItem bc = sender as BaseItem;
             ItemBindingData data = bc.Tag as ItemBindingData;
             Document doc = data.DataItem as Document;
+            if (!System.IO.File.Exists(doc.filepath)) { MessageBox.Show("找不到此文件！"); return; }
             System.Diagnostics.Process.Start(doc.filepath);
         }
 
@@ -201,6 +230,8 @@ namespace ProjectDocumentDataBase
                 if (_DocListAdvDic[sideNav2.SelectedItem.Text].SelectedValue != null)
                 {
                     Document p = _DocListAdvDic[sideNav2.SelectedItem.Text].SelectedValue as Document;
+                    System.IO.FileInfo fi = new System.IO.FileInfo(p.filepath);
+                    if (!fi.Exists) { MessageBox.Show("该文件已被删除！"); } else { System.IO.File.Move(p.filepath, PublicStatic.UnfiledPath + "\\" + fi.Name); }                    
                     using (Entities context = new Entities())
                     {
                         var query = from q in context.Document where q.docname == p.docname select q;

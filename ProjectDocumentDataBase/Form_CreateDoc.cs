@@ -202,7 +202,7 @@ namespace ProjectDocumentDataBase
                     docnumber = labelX3.Text,
                     doctypename = dt.doctype,
                     doctypeshort = dt.doctypeshort,
-                    filepath = textBoxX1.Text.Trim(),
+                    filepath = savepath + savename,
                     projname = p.projectname,
                     projshort = p.projshort,
                     projtypename = pt.projtype,
@@ -210,6 +210,7 @@ namespace ProjectDocumentDataBase
                     modifydatetime = fi.CreationTime,
                 });
                 context.SaveChanges();
+                
             }
             this.DialogResult = DialogResult.OK;
         }
