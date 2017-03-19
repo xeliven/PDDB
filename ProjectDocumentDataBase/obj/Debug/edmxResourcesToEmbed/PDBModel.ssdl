@@ -15,11 +15,14 @@
     <Property Name="msgflag" Type="int" Nullable="false" />
     <Property Name="msgdatetime" Type="datetime" Nullable="false" />
     <Property Name="docname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-    <Property Name="doctypeshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-    <Property Name="projname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-    <Property Name="projshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-    <Property Name="docnumber" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-    <Property Name="filepath" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="doctypename" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="doctypeshort" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="projtypename" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="projtypeshot" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="projname" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="projshort" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="docnumber" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="filepath" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="modifydatetime" Type="datetime" />
   </EntityType>
   <EntityType Name="DocumentType">
@@ -37,6 +40,7 @@
     <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="projectname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
     <Property Name="projshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="projettype" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="ProjectType">
     <Key>

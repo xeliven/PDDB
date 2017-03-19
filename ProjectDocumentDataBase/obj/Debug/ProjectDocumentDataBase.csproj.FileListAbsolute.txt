@@ -27,8 +27,11 @@ E:\MyGitHub\PDDB\ProjectDocumentDataBase\bin\Debug\DevComponents.DotNetBar2.xml
 E:\MyGitHub\PDDB\ProjectDocumentDataBase\bin\Debug\EntityFramework.xml
 E:\MyGitHub\PDDB\ProjectDocumentDataBase\bin\Debug\EntityFramework.SqlServer.xml
 E:\MyGitHub\PDDB\ProjectDocumentDataBase\bin\Debug\System.Data.SQLite.xml
-E:\MyGitHub\PDDB\ProjectDocumentDataBase\obj\Debug\ProjectDocumentDataBase.csprojResolveAssemblyReference.cache
 E:\MyGitHub\PDDB\ProjectDocumentDataBase\obj\Debug\ProjectDocumentDataBase.Form_ProjectTypeSetting.resources
 E:\MyGitHub\PDDB\ProjectDocumentDataBase\obj\Debug\ProjectDocumentDataBase.MainForm.resources
 E:\MyGitHub\PDDB\ProjectDocumentDataBase\obj\Debug\ProjectDocumentDataBase.Properties.Resources.resources
 E:\MyGitHub\PDDB\ProjectDocumentDataBase\obj\Debug\ProjectDocumentDataBase.csproj.GenerateResource.Cache
+E:\MyGitHub\PDDB\ProjectDocumentDataBase\obj\Debug\ProjectDocumentDataBase.Form_DocTypeSetting.resources
+E:\MyGitHub\PDDB\ProjectDocumentDataBase\obj\Debug\ProjectDocumentDataBase.Form_CreateProject.resources
+E:\MyGitHub\PDDB\ProjectDocumentDataBase\obj\Debug\ProjectDocumentDataBase.Form_CreateDoc.resources
+E:\MyGitHub\PDDB\ProjectDocumentDataBase\obj\Debug\ProjectDocumentDataBase.csprojResolveAssemblyReference.cache

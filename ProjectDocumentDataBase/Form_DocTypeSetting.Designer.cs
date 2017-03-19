@@ -1,6 +1,6 @@
 ﻿namespace ProjectDocumentDataBase
 {
-    partial class Form_ProjectTypeSetting
+    partial class Form_DocTypeSetting
     {
         /// <summary>
         /// Required designer variable.
@@ -59,7 +59,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(158, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(281, 324);
+            this.panelEx1.Size = new System.Drawing.Size(287, 367);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -67,7 +67,7 @@
             this.panelEx1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
-            this.panelEx1.TabIndex = 1;
+            this.panelEx1.TabIndex = 6;
             // 
             // groupPanel1
             // 
@@ -119,7 +119,7 @@
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(237, 140);
             this.labelX3.TabIndex = 0;
-            this.labelX3.Text = "1.类型名称尽可能简洁\r\n2.缩略词为该项目类型的英文字头缩写\r\n3.缩略词为英文大写\r\n4.删除项目类型将会移动到未归档文件夹";
+            this.labelX3.Text = "1.类型名称尽可能简洁\r\n2.缩略词为该文档类型的英文字头缩写\r\n3.缩略词为<b><u>三位</u></b>英文大写";
             // 
             // buttonX3
             // 
@@ -222,21 +222,21 @@
             this.listBoxAdv1.DragDropSupport = true;
             this.listBoxAdv1.Location = new System.Drawing.Point(0, 0);
             this.listBoxAdv1.Name = "listBoxAdv1";
-            this.listBoxAdv1.Size = new System.Drawing.Size(158, 324);
-            this.listBoxAdv1.TabIndex = 5;
+            this.listBoxAdv1.Size = new System.Drawing.Size(158, 367);
+            this.listBoxAdv1.TabIndex = 7;
             this.listBoxAdv1.Text = "listBoxAdv1";
             this.listBoxAdv1.ItemClick += new System.EventHandler(this.listBoxAdv1_ItemClick);
             // 
-            // Form_ProjectTypeSetting
+            // Form_DocTypeSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 324);
+            this.ClientSize = new System.Drawing.Size(445, 367);
             this.Controls.Add(this.panelEx1);
             this.Controls.Add(this.listBoxAdv1);
-            this.Name = "Form_ProjectTypeSetting";
-            this.Text = "项目类型设置";
-            this.Load += new System.EventHandler(this.Form_ProjectTypeSetting_Load);
+            this.Name = "Form_DocTypeSetting";
+            this.Text = "文档类型设置";
+            this.Load += new System.EventHandler(this.Form_DocTypeSetting_Load);
             this.panelEx1.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -244,16 +244,17 @@
         }
 
         #endregion
+
         private DevComponents.DotNetBar.PanelEx panelEx1;
-        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
+        private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.ButtonX buttonX3;
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.LabelX labelX3;
+        private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.ListBoxAdv listBoxAdv1;
     }
 }

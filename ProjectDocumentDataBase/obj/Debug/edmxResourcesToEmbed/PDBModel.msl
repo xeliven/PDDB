@@ -12,6 +12,9 @@
     <EntitySetMapping Name="Document">
       <EntityTypeMapping TypeName="PDBModel.Document">
         <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="projtypeshot" ColumnName="projtypeshot" />
+          <ScalarProperty Name="projtypename" ColumnName="projtypename" />
+          <ScalarProperty Name="doctypename" ColumnName="doctypename" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="msgflag" ColumnName="msgflag" />
           <ScalarProperty Name="msgdatetime" ColumnName="msgdatetime" />
@@ -37,6 +40,7 @@
     <EntitySetMapping Name="Project">
       <EntityTypeMapping TypeName="PDBModel.Project">
         <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="projettype" ColumnName="projettype" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="projectname" ColumnName="projectname" />
           <ScalarProperty Name="projshort" ColumnName="projshort" />

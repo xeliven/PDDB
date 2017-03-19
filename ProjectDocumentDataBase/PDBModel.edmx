@@ -20,11 +20,14 @@
           <Property Name="msgflag" Type="int" Nullable="false" />
           <Property Name="msgdatetime" Type="datetime" Nullable="false" />
           <Property Name="docname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-          <Property Name="doctypeshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-          <Property Name="projname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-          <Property Name="projshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-          <Property Name="docnumber" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
-          <Property Name="filepath" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="doctypename" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="doctypeshort" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="projtypename" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="projtypeshot" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="projname" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="projshort" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="docnumber" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="filepath" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="modifydatetime" Type="datetime" />
         </EntityType>
         <EntityType Name="DocumentType">
@@ -42,6 +45,7 @@
           <Property Name="id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="projectname" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
           <Property Name="projshort" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="projettype" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="ProjectType">
           <Key>
@@ -83,6 +87,9 @@
           <Property Name="docnumber" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="filepath" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="modifydatetime" Type="DateTime" />
+          <Property Name="doctypename" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="projtypename" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="projtypeshot" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DocumentType">
           <Key>
@@ -99,6 +106,7 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="projectname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="projshort" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="projettype" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ProjectType">
           <Key>
@@ -132,6 +140,9 @@
           <EntitySetMapping Name="Document">
             <EntityTypeMapping TypeName="PDBModel.Document">
               <MappingFragment StoreEntitySet="Document">
+                <ScalarProperty Name="projtypeshot" ColumnName="projtypeshot" />
+                <ScalarProperty Name="projtypename" ColumnName="projtypename" />
+                <ScalarProperty Name="doctypename" ColumnName="doctypename" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="msgflag" ColumnName="msgflag" />
                 <ScalarProperty Name="msgdatetime" ColumnName="msgdatetime" />
@@ -157,6 +168,7 @@
           <EntitySetMapping Name="Project">
             <EntityTypeMapping TypeName="PDBModel.Project">
               <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="projettype" ColumnName="projettype" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="projectname" ColumnName="projectname" />
                 <ScalarProperty Name="projshort" ColumnName="projshort" />

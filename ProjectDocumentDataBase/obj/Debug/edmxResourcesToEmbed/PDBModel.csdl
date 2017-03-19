@@ -21,6 +21,9 @@
     <Property Name="docnumber" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="filepath" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="modifydatetime" Type="DateTime" />
+    <Property Name="doctypename" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="projtypename" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="projtypeshot" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="DocumentType">
     <Key>
@@ -37,6 +40,7 @@
     <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="projectname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="projshort" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="projettype" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="ProjectType">
     <Key>

@@ -17,5 +17,6 @@ namespace ProjectDocumentDataBase
         public int id { get; set; }
         public string projectname { get; set; }
         public string projshort { get; set; }
+        public string projettype { get; set; }
     }
 }

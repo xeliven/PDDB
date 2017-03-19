@@ -24,5 +24,8 @@ namespace ProjectDocumentDataBase
         public string docnumber { get; set; }
         public string filepath { get; set; }
         public Nullable<System.DateTime> modifydatetime { get; set; }
+        public string doctypename { get; set; }
+        public string projtypename { get; set; }
+        public string projtypeshot { get; set; }
     }
 }

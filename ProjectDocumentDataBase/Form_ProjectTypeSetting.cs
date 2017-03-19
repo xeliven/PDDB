@@ -32,7 +32,7 @@ namespace ProjectDocumentDataBase
             textBoxX2.Text = pt.projtypeshot;
         }
         private void buttonX1_Click(object sender, EventArgs e)
-        {
+        {//添加
             using (Entities context = new Entities())
             {
                 context.ProjectType.Add(new ProjectType()
@@ -42,6 +42,8 @@ namespace ProjectDocumentDataBase
                 });
                 context.SaveChanges();
                 Form_ProjectTypeSetting_Load(null, null);
+                string path = PublicStatic.StorePath + "\\" + textBoxX1.Text.Trim();
+                if (!System.IO.Directory.Exists(path)) { System.IO.Directory.CreateDirectory(path); }
             }
         }
 
@@ -51,8 +53,9 @@ namespace ProjectDocumentDataBase
             ProjectType pt = listBoxAdv1.SelectedValue as ProjectType;
             using (Entities context = new Entities())
             {
-                context.Project.Remove(context.Project.Single(p => p.projectname == pt.projtype));
+                context.ProjectType.Remove(context.ProjectType.Single(p => p.projtype == pt.projtype));
                 context.SaveChanges();
+                System.IO.Directory.Move(PublicStatic.StorePath + "\\" + pt.projtype, PublicStatic.UnfiledPath);
             }
             Form_ProjectTypeSetting_Load(null, null);
         }
